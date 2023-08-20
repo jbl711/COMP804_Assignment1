@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html>
+<head>       
+    <title>
+        Jonathan Lejano: jbl711
+    </title>
+    <script>
+
+        //Task 4 Functions//       
+        function clickCat(){  
+            var displayField = document.getElementById("textDisplay");
+            var displaySpan = document.getElementById("spanDisplay");
+            var displayImage = document.getElementById("imageDisplay");
+			
+            displayField.value = "The user has clicked the 'Cat' button";
+            displayField.style.border = "solid blue"; 
+            displaySpan.innerHTML = "The image below is of a 'Cat'";
+            displaySpan.style.color = "blue";
+            displayImage.src = "cat.png";
+            displayImage.style.border = "solid blue 5px";  
+            
+            catClicked.style.border = "solid blue";
+            dogClicked.style.border = "none";
+            frogClicked.style.border = "none";
+      	}
+
+		  function clickDog(){  
+            var displayField = document.getElementById("textDisplay");
+            var displaySpan = document.getElementById("spanDisplay");
+            var displayImage = document.getElementById("imageDisplay");
+			
+            displayField.value = "The user has clicked the 'Dog' button";
+            displayField.style.border = "solid red";
+            displaySpan.innerHTML = "The image below is of a 'Dog'";
+            displaySpan.style.color = "red";
+            displayImage.src = "dog.png";
+            displayImage.style.border = "solid red 5px"; 
+
+            catClicked.style.border = "none";
+            dogClicked.style.border = "solid red";
+            frogClicked.style.border = "none";
+          }
+
+          function clickFrog(){  
+            var displayField = document.getElementById("textDisplay");
+            var displaySpan = document.getElementById("spanDisplay");
+            var displayImage = document.getElementById("imageDisplay");
+			
+            displayField.value = "The user has clicked the 'Frog' button";
+            displayField.style.border = "solid green";
+            displaySpan.innerHTML = "The image below is of a 'Frog'";
+            displaySpan.style.color = "green";
+            displayImage.src = "frog.png";
+            displayImage.style.border = "solid green 5px"; 
+
+            catClicked.style.border = "none";
+            dogClicked.style.border = "none";
+            frogClicked.style.border = "solid green";
+          }
+
+    </script>
+    <style>
+        
+        /*Task 1 Styles*/
+        .t1Headers {
+            color: purple;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #t1Border {
+            border-style: double;
+            border-color: blue;
+            padding: 20px;
+            background-color: lightgreen;
+            width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /*Task 2 Styles*/
+        #dateTable {
+            width: 1000px;
+            border-collapse: separate;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        #dateTable td {
+            padding: 10px;
+            border-color: black;
+            border-style: dashed;
+        }
+
+        #dateTable th {
+            padding: 10px;
+            color: white;
+            background-color: green;
+            text-align: left;
+            font-size: 20px;
+        }
+
+        .oddRow {
+            background-color: lightgreen;
+            text-align: left;
+            color: white;
+        }
+
+        .evenRow {
+            background-color: lightseagreen;
+            text-align: left;
+            color: white;
+        }
+
+        /*Task 3 Styles*/
+        #attackTable {
+            width: 1000px;
+            border-style: dashed;
+            padding: 5px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #attackTable th {
+            padding: 20px;
+            color: white;
+            background-color: green;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        #attackTable td {
+            border-color: black;
+            border-style: dotted;
+            padding: 10px;
+            border-collapse: collapse;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #attackTable p {
+            text-align: justify;
+        }
+
+        .refSource{
+            font-size: small;
+        }
+
+        /*Task 4 Styles*/
+        #clickSection {
+            text-align: center;
+        }
+
+        #textDisplay {
+            font-style: italic;
+            width: 230px;
+        }
+
+        #spanDisplay {
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!--Task 1-->
+    <h1>Task 1</h1>
+    <div id="t1Border">
+        <h2 class="t1Headers">
+            jbl711 Jonathan Lejano
+        </h2>
+        <h3 class="t1Headers">
+            COMP804: Web Security
+        </h3>
+        <h4 class="t1Headers" >
+            Assignment 1, due 11pm on Monday of Week 6
+        </h4>
+    </div>
+
+    <br><br>
+    <hr>
+    
+    <!--Task 2-->
+    <h1>Task 2</h1>
+    <br><br>
+    <table id="dateTable">
+        <tr>
+            <th>
+                Activity
+            </th>
+            <th>
+                Date
+            </th>
+        </tr>
+        <tr class="oddRow">
+            <td>
+                First day to enrol for re-enrolling (continuing students)
+            </td>
+            <td>
+                21 Nov 2022
+            </td>
+        </tr>
+        <tr class="evenRow">
+            <td>
+                Orientation
+            </td>
+            <td>
+                18 Jul 2023
+            </td>
+        </tr>
+        <tr class="oddRow">
+            <td>
+                Lectures Commence (weeks 1-9)
+            </td>
+            <td>
+                24 Jul - 22 Sep 2023
+            </td>
+        </tr>
+        <tr class="evenRow">
+            <td>
+                Last day to enrol / add subjects yourself
+            </td>
+            <td>
+                04 Aug 2023
+            </td>
+        </tr>
+        <tr class="oddRow">
+            <td>
+                Last day to enrol / add subjects with Head of Students approval
+            </td>
+            <td>
+                11 Aug 2023
+            </td>
+        </tr>
+        <tr class="evenRow">
+            <td>
+                <b>CENSUS DATE</b>
+                <ul>
+                    <li>
+                        Fees due
+                    </li>
+                    <li>
+                        Last day to withdraw from subject/s without paying for them
+                    </li>
+                    <li>
+                        HECS / FEE HELP debt reporting date
+                    </li>
+                    <li>
+                        Last day to change HECS / FEE HELP billing option 
+                    </li>
+                </ul>
+                <br>
+                <a href="https://uowedu.service-now.com/kb?id=kb_article_view&sysparm_article=KB0012659">
+                    Learn more about Census date >
+                </a>
+                <br><br>
+            </td>
+            <td>
+                31 Aug 2023
+            </td>
+        </tr>
+        <tr class="oddRow">
+            <td>
+                Student Services and Amenities Fees Due
+            </td>
+            <td>
+                01 Sep 2023
+            </td>
+        </tr>
+    </table>
+
+    <br><br>
+    <hr>
+    
+    <!--Task 3-->
+    <h1>Task 3</h1>
+    <br><br>
+
+    <table id="attackTable">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Web Attacks
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <b>Denial of Service (DoS)</b><br>
+                <!--Khah, S. 2017, Denial of Service attack, image, Researchgate, viewed 10th August 2023, 
+                    <https://www.researchgate.net/figure/Denial-of-Service-attack_fig4_316923166>.-->
+                <br>
+                <img src="Denial-of-Service-attack.png" alt="Denial of Service (DoS)" width="300px" height="150px"/>
+                <br>
+                <span class="refSource">
+                    <b>Image Source:</b><br>
+                    <a href="https://www.researchgate.net/figure/Denial-of-Service-attack_fig4_316923166">
+                        https://www.researchgate.net
+                    </a>
+                </span>
+            </td>
+            <td>
+                <p>
+                    The objective of a Denial of Service (DoS) attack is to crash the server, rendering it inoperable. 
+                    This is acheived by flooding the server with large amounts of requests. Due to the high traffic of
+                    packets being directed at the server, the server is unable to respond and essentially shuts down.
+                    The attack can occur from a single computer, or from a botnet (this particular type of attack is 
+                    called a Distributed Denial of Service attack, or DDoS).
+                </p>
+                <br>
+                <span class="refSource">
+                    <b>References:</b>
+                    <ul>
+                        <li>
+                            <!--Dahan, M. 2022, Top 10 most common web attacks and how to prevent them, Comparitech, 
+                                webblog post, viewed 9th August 2023, 
+                                <https://www.comparitech.com/blog/information-security/common-web-attacks/>-->
+                            <a href="https://www.comparitech.com/blog/information-security/common-web-attacks/">  
+                                https://www.comparitech.com/blog/information-security/common-web-attacks
+                            </a>
+                        </li>
+                        <li>
+                            <!--Keary, T. 2022, DoS vs DDoS Attacks: The Differences and How To Prevent Them in 2023,
+                                Comparitech, webblog post, viewed 13th August 2023,
+                                <https://www.comparitech.com/net-admin/dos-vs-ddos-attacks-differences-prevention/>.-->
+                            <a href="https://www.comparitech.com/net-admin/dos-vs-ddos-attacks-differences-prevention/">
+                                https://www.comparitech.com/net-admin/dos-vs-ddos-attacks-differences-prevention
+                            </a>
+                        </li>
+                    </ul>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Man-in-the-Middle Attack</b><br>
+                <br>
+                <!--Man in the middle attack example, image, Imperva, viewed 10th August 2023,
+                    <https://www.imperva.com/learn/application-security/man-in-the-middle-attack-mitm/>.-->
+                <img src="man-in-the-middle-mitm-attack.png" alt="Man-in-the-Middle Attack" width="300px" height="150px"/>
+                <br>
+                <span class="refSource">
+                    <b>Image Source:</b><br>
+                    <a href="https://www.imperva.com/learn/application-security/man-in-the-middle-attack-mitm/">
+                        https://www.imperva.com
+                    </a>
+                </span>
+            </td>
+            <td>
+                <p>
+                    A Man-in-the-Middle attack requires the perpetrator to insert themselves in between the user and
+                    the server. This means that instead of the user sending a request directly to the server, the
+                    request is first intercepted by the perpetrator. The perpetrator acts as a proxy server and is 
+                    able to manipulate the information before it gets sent to the server. The perpetrator can also
+                    modify information sent from the server to the user.  
+                </p>
+                <br>
+                <span class="refSource">
+                    <b>References:</b>
+                    <ul>
+                        <li>
+                            <!--Dahan, M. 2022, Top 10 most common web attacks and how to prevent them, Comparitech, 
+                                webblog post, viewed 9th August 2023, 
+                                <https://www.comparitech.com/blog/information-security/common-web-attacks/>-->
+                            <a href="https://www.comparitech.com/blog/information-security/common-web-attacks/">  
+                                https://www.comparitech.com/blog/information-security/common-web-attacks
+                            </a>
+                        </li>
+                        <li>
+                            <!--Watson, J. 2021, What is a Man in the Middle attack? How can I avoid it?, Comparitech,
+                                webblog post, viewed 13th August 2023,
+                                <https://www.comparitech.com/vpn/what-is-a-man-in-the-middle-attack/>.-->
+                            <a href="https://www.comparitech.com/vpn/what-is-a-man-in-the-middle-attack/">
+                                https://www.comparitech.com/vpn/what-is-a-man-in-the-middle-attack 
+                            </a>
+                        </li>
+                    </ul>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Drive-by Download Attack</b><br>
+                <br>
+                <!--Cassetto, O. 2019, Typical sequence of events in a drive by download attack, image, 
+                    Exabeam, viewed 10th August 2023, 
+                    <https://www.exabeam.com/information-security/drive-by-download/>.-->
+                <img src="drive_by_download.png" alt="Drive-by Download Attack" width="300px" height="150px"/>
+                <br>
+                <span class="refSource">
+                    <b>Image Source:</b><br>
+                    <a href="https://www.exabeam.com/information-security/drive-by-download/">
+                        https://www.exabeam.com
+                    </a>
+                </span>
+            </td>
+            <td>
+                <p>
+                    When visiting a website, the user may unintentionally download a malicious script; this is called 
+                    a Drive-By Download. This may occur without the user's knowledge if they have an out of date 
+                    browser or plugins. Alternatively, the user themselves may download a program without realising
+                    it has a malicious script in it.    
+                </p>
+                <br>
+                <span class="refSource">
+                    <b>References:</b>
+                    <ul>
+                        <li>
+                            <!--Dahan, M. 2022, Top 10 most common web attacks and how to prevent them, Comparitech, 
+                                webblog post, viewed 9th August 2023, 
+                                <https://www.comparitech.com/blog/information-security/common-web-attacks/>-->
+                            <a href="https://www.comparitech.com/blog/information-security/common-web-attacks/">  
+                                https://www.comparitech.com/blog/information-security/common-web-attacks
+                            </a>
+                        </li>
+                        <li>
+                            <!--Lake, J. 2019, What is a Drive-by Download and how can it infect your computer?,
+                                Comparitech, webblog post, viewed 14th August 2023,
+                                <https://www.comparitech.com/blog/information-security/drive-by-download/>.-->
+                            <a href="https://www.comparitech.com/blog/information-security/drive-by-download/">
+                                https://www.comparitech.com/blog/information-security/drive-by-download
+                            </a>
+                        </li>
+                    </ul>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Phishing</b><br>
+                <br>
+                <!--Baihan, M. 2016, Typical phishing attack steps, image, Researchgate, viewed 10th August 2023,
+                    <https://www.researchgate.net/figure/Typical-phishing-attack-steps-1_fig1_301649466>.-->
+                <img src="phishing.png" alt="Phishing" width="300px" height="150px"/>
+                <br>
+                <span class="refSource">
+                    <b>Image Source:</b><br>
+                    <a href="https://www.researchgate.net/figure/Typical-phishing-attack-steps-1_fig1_301649466">
+                        https://www.researchgate.net
+                    </a>
+                </span>
+            </td>
+            <td>
+                <p>
+                    Phishing is a method in which attackers try to extract sensitive information from users through
+                    social engineering. This information may include personal details, home address, bank details, 
+                    login information, and so on. The perpetrator will pose as a legitimate entity in order to lead the
+                    user to reveal sensitive information about themselves. Spear phishing is focussed on getting 
+                    sensitive information from a specific target.
+                </p>
+                <br>
+                <span class="refSource">
+                    <b>References:</b>
+                    <ul>
+                        <li>
+                            <!--Dahan, M. 2022, Top 10 most common web attacks and how to prevent them, Comparitech, 
+                                webblog post, viewed 9th August 2023, 
+                                <https://www.comparitech.com/blog/information-security/common-web-attacks/>-->
+                            <a href="https://www.comparitech.com/blog/information-security/common-web-attacks/">  
+                                https://www.comparitech.com/blog/information-security/common-web-attacks
+                            </a>
+                        </li>
+                        <li>
+                            <!--Albaugh, D. 2022, Common Phishing Scams and How to Recognize and Avoid them,
+                                Comparitech, webblog post, viewed 14th August,
+                                <https://www.comparitech.com/blog/information-security/common-phishing-scams-how-to-avoid/>-->
+                            <a href="https://www.comparitech.com/blog/information-security/common-phishing-scams-how-to-avoid/"> 
+                                https://www.comparitech.com/blog/information-security/common-phishing-scams-how-to-avoid 
+                            </a>
+                        </li>
+                    </ul>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Password-based Attack</b><br>
+                <br>
+                <!--A basic illustration of a brute force attack, 2021, image, The SSL store, viewed 10th August 2023,
+                    <https://www.thesslstore.com/blog/brute-force-attack-definition-how-brute-force-works/>.-->
+                <img src="password-based-attack.png" alt="Password-based Attack" width="300px" height="150px"/>
+                <br>
+                <span class="refSource">
+                    <b>Image Source:</b><br>
+                    <a href="https://www.thesslstore.com/blog/brute-force-attack-definition-how-brute-force-works/">
+                        https://www.thesslstore.com
+                    </a>
+                </span>
+            </td>
+            <td>
+                <p>
+                    An attacker might want access to a user's account, but does not know the user's password. The 
+                    perpetrator would then use a Password-based attck to get access into the user's account. An 
+                    attacker might use brute-force or a password dictionary to guess the password of the user until
+                    they gain access. Alternatively, the attacker might try using already comprimised credentials. 
+                </p>
+                <br>
+                <span class="refSource">
+                    <b>References:</b>
+                    <ul>
+                        <li>
+                            <!--Dahan, M. 2022, Top 10 most common web attacks and how to prevent them, Comparitech, 
+                                webblog post, viewed 9th August 2023, 
+                                <https://www.comparitech.com/blog/information-security/common-web-attacks/>-->
+                            <a href="https://www.comparitech.com/blog/information-security/common-web-attacks/">  
+                                https://www.comparitech.com/blog/information-security/common-web-attacks
+                            </a>
+                        </li>
+                        <li>
+                            <!--Dahan, M. 2022, What are Pass the Hash Attacks? (+ how to prevent them), Comparitech,
+                                webblog post, viewed 14th August 2023,
+                                <https://www.comparitech.com/blog/information-security/pass-the-hash-attacks/>.-->
+                            <a href="https://www.comparitech.com/blog/information-security/pass-the-hash-attacks/"> 
+                                https://www.comparitech.com/blog/information-security/pass-the-hash-attacks 
+                            </a>
+                        </li>
+                    </ul>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>SQL Injection</b><br>
+                <br>
+                <!--SQL injection attack diagram, image, AVI Networks, viewed 10th August 2023,
+                    <https://www-stage.avinetworks.com/glossary/sql-injection-attack/>.-->
+                <img src="sql-injection-attack-diagram.png" alt="SQL Injection" width="300px" height="150px"/>
+                <br>
+                <span class="refSource">
+                    <b>Image Source:</b><br>
+                    <a href="https://www-stage.avinetworks.com/glossary/sql-injection-attack/">
+                        https://www-stage.avinetworks.com
+                    </a>
+                </span>
+            </td>
+            <td>
+                <p>
+                    SQL Injection is when a perpetrator uses a specific string of characters to run the perpetrator's
+                    desired SQL command on the server end. The perpetrator enters the specific string into an input text 
+                    area on the website. If there's a vulnerability in the code on the server's end, then the string 
+                    can be read as a SQL query, which can then lead to the perpertrator potentially retrieving all the
+                    contents from the server's database.
+                </p>
+                <br>
+                <span class="refSource">
+                    <b>References:</b>
+                    <ul>
+                        <li>
+                            <!--Dahan, M. 2022, Top 10 most common web attacks and how to prevent them, Comparitech, 
+                                webblog post, viewed 9th August 2023, 
+                                <https://www.comparitech.com/blog/information-security/common-web-attacks/>-->
+                            <a href="https://www.comparitech.com/blog/information-security/common-web-attacks/">  
+                                https://www.comparitech.com/blog/information-security/common-web-attacks
+                            </a>
+                        </li>
+                        <li>
+                            <!--Albaugh, D. 2020, SQL injection prevention tips and examples for web programmers,
+                                Comparitech, webblog post, viewed 14th August 2023,
+                                <https://www.comparitech.com/blog/information-security/sql-injection-prevention-tips-for-web-programmers/>.-->
+                            <a href="https://www.comparitech.com/blog/information-security/sql-injection-prevention-tips-for-web-programmers/">
+                                https://www.comparitech.com/blog/information-security/sql-injection-prevention-tips-for-web-programmers/ 
+                            </a>
+                        </li>
+                    </ul>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Cross-Site Scripting</b><br>
+                <br>
+                <!--Cross site scripting, 2021, image, Website Security Store, viewed 10th August 2023,
+                    <https://websitesecuritystore.com/blog/what-is-cross-site-scripting-attack/>.-->
+                <img src="cross-site-scripting.png" alt="Cross-Site Scripting" width="300px" height="150px"/>
+                <br>
+                <span class="refSource">
+                <b>Image Source:</b><br>
+                    <a href="https://websitesecuritystore.com/blog/what-is-cross-site-scripting-attack/">
+                        https://websitesecuritystore.com
+                    </a>
+                </span>
+            </td>
+            <td>
+                <p>
+                    If a website or web application has vulnerabilities in its code, then an attacker can use 
+                    Cross-Site Scripting to use that web application to send malicious script when accessed. Through 
+                    social engineering, a user may unsuspectingly trigger the malicious script when they access the 
+                    seemingly innocent website. This attack can be used to get sensistive information from the user,
+                    download malware onto the user's computer, or redirect the user to a malicious website which the
+                    perpetrator controls. 
+                </p>
+                <br>
+                <span class="refSource">
+                    <b>References:</b>
+                    <ul>
+                        <li>
+                            <!--Dahan, M. 2022, Top 10 most common web attacks and how to prevent them, Comparitech, 
+                                webblog post, viewed 9th August 2023, 
+                                <https://www.comparitech.com/blog/information-security/common-web-attacks/>-->
+                            <a href="https://www.comparitech.com/blog/information-security/common-web-attacks/">  
+                                https://www.comparitech.com/blog/information-security/common-web-attacks
+                            </a>
+                        </li>
+                        <li>
+                            <!--Dahan, M. 2020, What is a Cross-site scripting attack? How to prevent XSS attack,
+                                Comparitech, webblog post, 15th August 2023,
+                                <https://www.comparitech.com/blog/information-security/cross-site-scripting/>.-->
+                            <a href="https://www.comparitech.com/blog/information-security/cross-site-scripting/">
+                                https://www.comparitech.com/blog/information-security/cross-site-scripting 
+                            </a>
+                        </li>
+                    </ul>
+                </span>
+            </td>
+        </tr>
+            <td>
+                <b>Trojans</b><br>
+                <br>
+                <!--Trojan malware, image, Imperva, viewed 10th AUgust 2023,
+                    <https://www.imperva.com/learn/application-security/trojans/>.-->
+                <img src="trojan-malware.png" alt="Trojans" width="300px" height="150px"/>
+                <br>
+                <span class="refSource">
+                    <b>Image Source:</b><br>
+                    <a href="https://www.imperva.com/learn/application-security/trojans/">
+                        https://www.imperva.com
+                    </a>
+                </span>
+            </td>
+            <td>
+                <p>
+                    When Trojan malware is downloaded onto a computer, it creates an unauthorised access point to the
+                    computer. The attacker can use this access point to steal information from the user's computer,
+                    download more malware onto their computer, or take control of the user's computer. Social 
+                    engineering is used to manipulate a user to download a trojan malware. 
+                    
+                </p>
+                <br>
+                <span class="refSource">
+                    <b>References:</b>
+                    <ul>
+                        <li>
+                            <!--Dahan, M. 2022, Top 10 most common web attacks and how to prevent them, Comparitech, 
+                                webblog post, viewed 9th August 2023, 
+                                <https://www.comparitech.com/blog/information-security/common-web-attacks/>-->
+                            <a href="https://www.comparitech.com/blog/information-security/common-web-attacks/">  
+                                https://www.comparitech.com/blog/information-security/common-web-attacks
+                            </a>
+                        </li>
+                        <li>
+                            <!--Dahan, M. 2021, What is Trojan Horse Malware and how can you avoid it?, Comparitech,
+                                webblog post, viewed 15th August 2023,
+                                <https://www.comparitech.com/blog/information-security/trojan-horse-malware/>.-->
+                            <a href="https://www.comparitech.com/blog/information-security/trojan-horse-malware/">
+                                https://www.comparitech.com/blog/information-security/trojan-horse-malware/ 
+                            </a>
+                        </li>
+                    </ul>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Macro Viruses</b><br>
+                <br>
+                <!--Kirda, E. 2014, introduction-to-malware-part-1-27-2048, image, Slideshare, viewed 10th August 2023,
+                    <https://www.slideshare.net/lastlinesecurity/introduction-to-malware-part-1>.-->
+                <img src="macro-virus.png" alt="Macro Viruses" width="300px" height="150px"/>
+                <br>
+                <span class="refSource">
+                    <b>Image Source:</b><br>
+                    <a href="https://www.slideshare.net/lastlinesecurity/introduction-to-malware-part-1">
+                        https://www.slideshare.net/lastlinesecurity
+                    </a>
+                </span>
+            </td>
+            <td>
+                <p>
+                    A perpetrator can infect a software application by scripting malicious code using the 
+                    application's macro language, hence the name Macro virus. For example, the perpetrator may insert
+                    a malicious script into a Microsoft Word or Excel document using macros. If the user downloads an
+                    infected document and triggers the attacker's macros, the macros can then infect other documents, 
+                    causing (at worst) data corruption or hard-drive reformatting.
+                </p>
+                <br>
+                <span class="refSource">
+                    <b>References:</b>
+                    <ul>
+                        <li>
+                            <!--Dahan, M. 2022, Top 10 most common web attacks and how to prevent them, Comparitech, 
+                                webblog post, viewed 9th August 2023, 
+                                <https://www.comparitech.com/blog/information-security/common-web-attacks/>-->
+                            <a href="https://www.comparitech.com/blog/information-security/common-web-attacks/">  
+                                https://www.comparitech.com/blog/information-security/common-web-attacks
+                            </a>
+                        </li>
+                        <li>
+                            <!--Dahan, M. 2022, What are Macro viruses and how can you prevent them?, Comparitech,
+                                webblog post, viewed 15th August,
+                                <https://www.comparitech.com/blog/information-security/macro-viruses/>.-->
+                            <a href="https://www.comparitech.com/blog/information-security/macro-viruses/"> 
+                                https://www.comparitech.com/blog/information-security/macro-viruses 
+                            </a>
+                        </li>
+                    </ul>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Ransomware</b><br>
+                <br>
+                <!--Rosli, S. 2020, Ransomware Lifecycle, image, Reaserachgate, viewed 10th August 2023,
+                    <https://www.researchgate.net/figure/Ransomware-Lifecycle-4_fig1_339617849>.-->
+                <img src="Ransomware-Lifecycle-4.jpg" alt="Ransomware" width="300px" height="150px"/>
+                <br>
+                <span class="refSource">
+                    <b>Image Source:</b><br>
+                    <a href="https://www.researchgate.net/figure/Ransomware-Lifecycle-4_fig1_339617849">
+                        https://www.researchgate.net
+                    </a>
+                </span>
+            </td>
+            <td>
+                <p>
+                    Ransomware is a type of malware which renders the user's data inaccessible on their computer. If a
+                    user unintentionally downloads ransomware, the attacker can then encrypt the user's data. The goal 
+                    isn't to steal the user's data; the aim is to extort the user, i.e. hold the computer up for ransom.
+                    The only way to gain access back to the data is by meeting the perpetrator's demands and obtaining
+                    the decryption key from them.                      
+                </p>
+                <br>
+                <span class="refSource">
+                    <b>References:</b>
+                    <ul>
+                        <li>
+                            <!--Dahan, M. 2022, Top 10 most common web attacks and how to prevent them, Comparitech, 
+                                webblog post, viewed 9th August 2023, 
+                                <https://www.comparitech.com/blog/information-security/common-web-attacks/>-->
+                            <a href="https://www.comparitech.com/blog/information-security/common-web-attacks/">  
+                                https://www.comparitech.com/blog/information-security/common-web-attacks
+                            </a>
+                        </li>
+                        <li>
+                            <!--Cook, S. 2021, What ransomware is and how to prevent and remove it, Comparitech,
+                                webblog post, viewed 15th August 2023,
+                                <https://www.comparitech.com/blog/information-security/ransomware-removal-handbook/>.-->
+                            <a href="https://www.comparitech.com/blog/information-security/ransomware-removal-handbook/"> 
+                                https://www.comparitech.com/blog/information-security/ransomware-removal-handbook 
+                            </a>
+                        </li>
+                    </ul>
+                </span>
+            </td>
+        </tr>
+    </table>
+
+    <br><br>
+    <hr>
+    
+    <!--Task 4-->
+    <h1>Task 4</h1>
+    <br><br>
+    <div id="clickSection">
+
+        <button id="catClicked" onclick="clickCat();">
+            Cat
+        </button>
+        <button id="dogClicked" onclick="clickDog();">
+            Dog
+        </button>
+        <button id="frogClicked" onclick="clickFrog();">
+            Frog
+        </button>
+
+        <br><br>
+
+        <input id="textDisplay"/>
+
+        <br><br>
+
+        <span id="spanDisplay"></span>
+
+        <br><br>
+
+        <img id="imageDisplay" width="200px"/>
+
+    </div>
+
+    <br><br>
+    
+    <span class="refSource">
+        <b>Image Sources:</b> <br>
+        <ul>
+            <li>
+                <!--Good Ware, Lineal Color by Good Ware - Bastet Icons, image, Flaticon, viewed 9th August 2023,
+			        <https://www.flaticon.com/search?style_id=693&author_id=227&word=cat&type=standard>.-->
+                <a href="https://www.flaticon.com/free-icons/bastet" title="bastet icons">
+                    Bastet icons created by Good Ware - Flaticon
+                </a>
+            </li>
+            <li>
+                <!--Good Ware, Lineal Color by Good Ware - Dog Icons, image, Flaticon, viewed 9th August 2023,
+			        <https://www.flaticon.com/search?style_id=693&author_id=227&word=dog&type=standard>.-->
+                <a href="https://www.flaticon.com/free-icons/dog" title="dog icons">
+                    Dog icons created by Good Ware - Flaticon
+                </a>
+            </li>
+            <li>
+                <!--Good Ware, Lineal Color by Good Ware - Frog Icons, image, Flaticon, viewed 5th August 2023,
+			        <https://www.flaticon.com/search?style_id=693&author_id=227&word=frog&type=standard>.-->
+	            <a href="https://www.flaticon.com/free-icons/frog" title="frog icons">
+                    Frog icons created by Good Ware - Flaticon
+                </a>
+            </li>
+        </ul>
+    </span>
+
+    <br><br>
+</body>
+</html>
